@@ -2,7 +2,10 @@ export const environment = {
   production: true,
   transactions: {
     page: 1,
-    limit: 50
+    limit: 50,
+    searchLimit: 20,
+    url: 'http://5d2c9c3f8c90070014972764.mockapi.io',
+    endpoint: '/transactions'
   },
   identityServer: {
     url: 'https://dev.api.identityserver.propy.com',
