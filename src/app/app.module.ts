@@ -12,6 +12,7 @@ import {AbstractDateTime, DateTimeActual} from './shared/utils/date-time.service
 import {FooterComponent} from './footer/footer.component';
 import {AboutComponent} from './pages/about/about.component';
 import {TermsComponent} from './pages/terms/terms.component';
+import {ContactComponent} from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {TermsComponent} from './pages/terms/terms.component';
     HeaderComponent,
     FooterComponent,
     AboutComponent,
-    TermsComponent
+    TermsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
