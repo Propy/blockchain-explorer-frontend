@@ -11,13 +11,15 @@ import {StorageServiceModule} from 'angular-webstorage-service';
 import {AbstractDateTime, DateTimeActual} from './shared/utils/date-time.service';
 import {FooterComponent} from './footer/footer.component';
 import {AboutComponent} from './pages/about/about.component';
+import {TermsComponent} from './pages/terms/terms.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    AboutComponent
+    AboutComponent,
+    TermsComponent
   ],
   imports: [
     BrowserModule,
