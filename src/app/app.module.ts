@@ -8,6 +8,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {StorageServiceModule} from 'angular-webstorage-service';
+import {AbstractDateTime, DateTimeActual} from './shared/utils/date-time.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import {StorageServiceModule} from 'angular-webstorage-service';
     ReactiveFormsModule,
     StorageServiceModule
   ],
-  providers: [],
+  providers: [
+    { provide: AbstractDateTime, useClass: DateTimeActual }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
