@@ -9,13 +9,15 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {StorageServiceModule} from 'angular-webstorage-service';
 import {AbstractDateTime, DateTimeActual} from './shared/utils/date-time.service';
-import { FooterComponent } from './footer/footer.component';
+import {FooterComponent} from './footer/footer.component';
+import {AboutComponent} from './pages/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
