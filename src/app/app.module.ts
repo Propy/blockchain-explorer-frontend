@@ -16,6 +16,7 @@ import {ContactComponent} from './pages/contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import {TransactionListComponent} from './transaction-list/transaction-list.component';
 import {TransactionDetailsComponent} from './transaction-details/transaction-details.component';
+import {WatchlistComponent} from './watchlist/watchlist.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {TransactionDetailsComponent} from './transaction-details/transaction-det
     ContactComponent,
     LoginComponent,
     TransactionListComponent,
-    TransactionDetailsComponent
+    TransactionDetailsComponent,
+    WatchlistComponent
   ],
   imports: [
     BrowserModule,
