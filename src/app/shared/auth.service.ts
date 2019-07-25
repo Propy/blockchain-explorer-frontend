@@ -49,6 +49,16 @@ export class AuthService {
       return true;
   }
 
+  performLogout() {
+    this.userTokenService.clearTokens();
+    this.router.navigate(['/']);
+    return true;
+  }
+
+  isAuthenticated() {
+    return this.userTokenService.hasStoredTokens() && !this.userTokenService.isTokenExpired();
+  }
+
   private postWithIdentitySerialization = (endpoint: string, data: object, config: object = {}): AxiosPromise => {
     let configObj = {
       headers: {

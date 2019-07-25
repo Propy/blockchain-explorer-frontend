@@ -9,7 +9,7 @@ import {environment} from '../../environments/environment';
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
-
+import {AuthService} from '../shared/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -26,7 +26,10 @@ export class HeaderComponent implements OnInit {
   @ViewChild('searchForm', {static: true}) form: NgForm;
 
 
-  constructor(private transactionsService: TransactionsService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private transactionsService: TransactionsService,
+              private router: Router,
+              private route: ActivatedRoute,
+              private auth: AuthService) { }
 
   search = (text$: Observable<string>) => {
     return text$.pipe(
@@ -58,6 +61,10 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  logout() {
+    this.auth.performLogout();
   }
 
 }

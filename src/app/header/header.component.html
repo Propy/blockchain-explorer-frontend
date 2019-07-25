@@ -29,7 +29,8 @@
                 <a class="p-2 text-dark" routerLink="watchlist">Watchlist</a>
                 <a class="p-2 text-dark" routerLink="about">About</a>
                 <a class="p-2 text-dark" routerLink="contact">Contact</a>
-                <a class="p-2 text-dark" routerLink="login">Sign In</a>
+                <a class="p-2 text-dark" routerLink="login" *ngIf="!auth.isAuthenticated()">Sign In</a>
+                <a class="p-2 text-dark" href="javascript:" (click)="logout()" *ngIf="auth.isAuthenticated()">Sign out</a>
             </nav>
             <div ngbDropdown>
                 <a ngbDropdownToggle class="p-2 text-dark" href="javascript:;"><i class="fas fa-ellipsis-v"></i>

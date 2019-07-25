@@ -55,7 +55,12 @@
         </ngb-tab>
         <ngb-tab title="Propy Data">
             <ng-template ngbTabContent>
-
+                <div *ngIf="auth.isAuthenticated()">
+                    logged in propy data
+                </div>
+                <div *ngIf="!auth.isAuthenticated()">
+                    <a href="javascript:" routerLink="login">Sign in</a> in order to see this property details
+                </div>
             </ng-template>
         </ngb-tab>
     </ngb-tabset>

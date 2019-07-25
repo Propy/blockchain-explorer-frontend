@@ -3,6 +3,8 @@ import {TransactionsService} from '../shared/transactions.service';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import { Transaction } from '../shared/models/transaction';
 import { Observable } from 'rxjs';
+import {UserTokenService} from '../shared/user-token.service';
+import {AuthService} from '../shared/auth.service';
 
 @Component({
   selector: 'app-transaction-details',
@@ -12,7 +14,10 @@ import { Observable } from 'rxjs';
 export class TransactionDetailsComponent implements OnInit {
 
   private transaction: Transaction;
-  constructor(private transactionsService: TransactionsService, private route: ActivatedRoute) { }
+  private isUserLogged: boolean;
+  constructor(private transactionsService: TransactionsService,
+              private route: ActivatedRoute,
+              private auth: AuthService) { }
 
   ngOnInit() {
 
@@ -30,5 +35,4 @@ export class TransactionDetailsComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.transactionsService.getTransactionById(id).subscribe( (data: Transaction) => { this.transaction = data; } );
   }
-
 }
