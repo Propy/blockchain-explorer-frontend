@@ -1,0 +1,30 @@
+<table class="table table-striped mt-2">
+    <thead>
+        <tr>
+            <th>
+                Transaction Hash:
+            </th>
+            <th>
+                Timestamp:
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let transaction of transactions">
+            <td>
+                <a routerLink="/transaction/{{transaction.id}}"> {{ transaction.id }} </a>
+            </td>
+            <td>
+                {{ transaction.timestamp }}
+            </td>
+        </tr>
+    </tbody>
+</table>
+<ngb-pagination [collectionSize]="totalItems"
+                [pageSize]="limit"
+                [(page)]="page"
+                [maxSize]="7"
+                [rotate]="true"
+                [boundaryLinks]="true"
+                (pageChange)="loadPage($event)"></ngb-pagination>
+
