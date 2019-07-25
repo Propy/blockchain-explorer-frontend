@@ -1,0 +1,62 @@
+<div class="col-md-12">
+    <p>Transaction details</p>
+    <ngb-tabset>
+        <ngb-tab title="Blockchain Data">
+            <ng-template ngbTabContent>
+
+                <table class="table table-striped mt-2">
+                <thead>
+                    <tr><td>Name</td><td>Value</td><td>Timestamp</td></tr>
+                </thead>
+                    <tbody>
+                        <tr>
+                            <td>Transaction ID</td>
+                            <td>{{ transaction.id }}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Image</td>
+                            <td><img src="{{ transaction.image }}" width="30%" /></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>{{ transaction.address }}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Property Type</td>
+                            <td>{{ transaction.propertyType }}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Property Size</td>
+                            <td>{{ transaction.propertySize }}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td># Bathrooms</td>
+                            <td>{{ transaction.bathrooms }}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td># Bedrooms</td>
+                            <td>{{ transaction.bedrooms }}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Price</td>
+                            <td>{{ transaction.price }}</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Propy Data">
+            <ng-template ngbTabContent>
+
+            </ng-template>
+        </ngb-tab>
+    </ngb-tabset>
+</div>
