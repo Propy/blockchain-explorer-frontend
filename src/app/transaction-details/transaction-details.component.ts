@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {TransactionsService} from '../shared/transactions.service';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import { Transaction } from '../shared/models/transaction';
-import { Observable } from 'rxjs';
-import {UserTokenService} from '../shared/user-token.service';
 import {AuthService} from '../shared/auth.service';
+import {Property} from '../shared/interfaces/property';
+import {User} from '../shared/interfaces/user';
+import {Deed} from '../shared/interfaces/deed';
+import {DeedUser} from '../shared/interfaces/deed-user';
 
 @Component({
   selector: 'app-transaction-details',
@@ -13,8 +15,11 @@ import {AuthService} from '../shared/auth.service';
 })
 export class TransactionDetailsComponent implements OnInit {
 
-  private transaction: Transaction;
-  private isUserLogged: boolean;
+  private property: Property;
+  private seller: DeedUser;
+  private buyer: DeedUser;
+  private deed: Deed;
+
   constructor(private transactionsService: TransactionsService,
               private route: ActivatedRoute,
               private auth: AuthService) { }
@@ -33,6 +38,15 @@ export class TransactionDetailsComponent implements OnInit {
 
   fetchData() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.transactionsService.getTransactionById(id).subscribe( (data: Transaction) => { this.transaction = data; } );
+
+    this.transactionsService.getTransaction(id).subscribe(([property, buyer, seller, deed]) => {
+        this.buyer = buyer;
+        this.seller = seller;
+        this.property = property;
+        this.deed = deed;
+    });
+
+
+
   }
 }

@@ -13,7 +13,8 @@
             <form class="inline-form">
                 <div class="input-group">
                     <form #searchForm="ngForm" (ngSubmit)="submit(searchForm.form)" class="form-inline">
-                        <input id="typeahead-basic" type="text" class="form-control" name="model" (selectItem)="selectedItem($event)" [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt" [inputFormatter]="formatter"/>
+                        <!-- <input id="typeahead-basic" type="text" class="form-control" name="model" (selectItem)="selectedItem($event)" [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt" [inputFormatter]="formatter"/> -->
+                        <input type="text" class="form-control" name="model" [(ngModel)]="model" />
                         <div class="input-group-prepend">
                             <button class="btn btn-secondary" type="submit" (click)="submit(searchForm.form)">
                                 <i class="fas fa-search"></i>

@@ -8,4 +8,7 @@ export class Transaction {
     propertyType: string;
     price: number;
     image: string;
+    deedAddress: string;
+    addresses: any;
+    error: string;
 }

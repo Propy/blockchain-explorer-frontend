@@ -46,7 +46,10 @@ export class HeaderComponent implements OnInit {
     }));
   }
 
-  submit = (form) => {
+  submit = async (form) => {
+    const keyword = form.value.model;
+    const result = await this.transactionsService.searchTransaction(keyword);
+
     this.router.navigate(['/transaction', typeof form.value.model === 'object' ? form.value.model.id : form.value.model], {
       queryParams: {refresh: new Date().getTime()}
     });

@@ -8,14 +8,13 @@ export const environment = {
     page: 1,
     limit: 50,
     searchLimit: 20,
-    url: 'http://5d2c9c3f8c90070014972764.mockapi.io',
+    url: 'http://localhost',
     endpoint: '/transactions',
     endpoints: {
       DEED: '/deed',
       PROPERTY: '/property',
       USER: '/user',
-      ADDRESS_VALID: '/address/valid',
-      TRANSACTION_HASH_VALID: '/txhash/valid'
+      DOCUMENT: '/document'
     }
   },
   identityServer: {
