@@ -11,27 +11,27 @@
                     <tbody>
                         <tr>
                             <td>Deed Address</td>
-                            <td>{{ deed.deedAddress }}</td>
+                            <td>{{ deed?.deedAddress }}</td>
                         </tr>
                         <tr>
                             <td>Buyers</td>
-                            <td>{{ buyer.firstname }} {{ buyer.lastname }}</td>
+                            <td>{{ buyer?.firstname }} {{ buyer?.lastname }}</td>
                         </tr>
                         <tr>
                             <td>Sellers</td>
-                            <td>{{ seller.firstname }} {{ seller.lastname }}</td>
+                            <td>{{ seller?.firstname }} {{ seller?.lastname }}</td>
                         </tr>
                         <tr>
                             <td>Property name</td>
-                            <td>{{ property.name }}</td>
+                            <td>{{ property?.name }}</td>
                         </tr>
                         <tr>
                             <td>Property physical address</td>
-                            <td>{{ property.physicalAddress }}</td>
+                            <td>{{ property?.physicalAddress }}</td>
                         </tr>
                         <tr>
                             <td>Document address</td>
-                            <td></td>
+                            <td>{{ document?.hash }}</td>
                         </tr>
                     </tbody>
                 </table>

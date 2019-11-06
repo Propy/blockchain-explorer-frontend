@@ -66,6 +66,7 @@ export class TransactionsService {
                   this.getProperty(deed.addresses.property),
                   this.getUser(deed.addresses.buyers),
                   this.getUser(deed.addresses.sellers),
+                  this.getDocument(deed.addresses.document),
                   of(deed)
               ]);
           })

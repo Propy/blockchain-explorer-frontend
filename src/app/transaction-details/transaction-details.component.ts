@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {TransactionsService} from '../shared/transactions.service';
 import {ActivatedRoute, ParamMap} from '@angular/router';
-import { Transaction } from '../shared/models/transaction';
 import {AuthService} from '../shared/auth.service';
 import {Property} from '../shared/interfaces/property';
-import {User} from '../shared/interfaces/user';
 import {Deed} from '../shared/interfaces/deed';
 import {DeedUser} from '../shared/interfaces/deed-user';
+import {Document} from '../shared/interfaces/document';
 
 @Component({
   selector: 'app-transaction-details',
@@ -19,6 +18,7 @@ export class TransactionDetailsComponent implements OnInit {
   private seller: DeedUser;
   private buyer: DeedUser;
   private deed: Deed;
+  private document: Document;
 
   constructor(private transactionsService: TransactionsService,
               private route: ActivatedRoute,
@@ -39,10 +39,11 @@ export class TransactionDetailsComponent implements OnInit {
   fetchData() {
     const id = this.route.snapshot.paramMap.get('id');
 
-    this.transactionsService.getTransaction(id).subscribe(([property, buyer, seller, deed]) => {
+    this.transactionsService.getTransaction(id).subscribe(([property, buyer, seller, document, deed]) => {
         this.buyer = buyer;
         this.seller = seller;
         this.property = property;
+        this.document = document;
         this.deed = deed;
     });
 
