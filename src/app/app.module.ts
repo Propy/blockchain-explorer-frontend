@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import {TransactionListComponent} from './transaction-list/transaction-list.component';
 import {TransactionDetailsComponent} from './transaction-details/transaction-details.component';
 import {WatchlistComponent} from './watchlist/watchlist.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -29,17 +30,18 @@ import {WatchlistComponent} from './watchlist/watchlist.component';
     LoginComponent,
     TransactionListComponent,
     TransactionDetailsComponent,
-    WatchlistComponent
+    WatchlistComponent,
+    HomeComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    StorageServiceModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        StorageServiceModule,
+    ],
   providers: [
     { provide: AbstractDateTime, useClass: DateTimeActual }
   ],

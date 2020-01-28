@@ -1,0 +1,36 @@
+<div class="col-md-12">
+    <div class="search-bar-wrapper">
+
+                <h1>Blockchain Explorer</h1>
+                <form [formGroup]="addressOrHashForm" (ngSubmit)="submit()">
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <select class="form-control" placeholder="Platform type" formControlName="platformType" name="platformType" id="platformType">
+                                <option value="">Choose Platform</option>
+                                <option [value]="platformTypeEnum.TRANSACTION_PLATFORM">Transaction Platform</option>
+                                <option [value]="platformTypeEnum.PRIVATE_REGISTRY">Private Registry</option>
+                                <option [value]="platformTypeEnum.DEED_REGISTRATION">Deed Registration Tool</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-10">
+                            <input type="text" class="form-control float-left" name="addressOrHash" formControlName="addressOrHash" />
+                            <div class="float-left">
+                                <button class="btn btn-secondary" type="submit" (click)="submit()" [disabled]="!addressOrHashForm.valid">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="!addressOrHashForm.valid && (addressOrHashForm.dirty || addressOrHashForm.touched)" class="alert alert-danger">
+                        <div *ngIf="platformTypeModel.errors">
+                            Please choose your platform type
+                        </div>
+                        <div *ngIf="addressOrHashModel.errors.required">
+                            Please enter your deed smart contract address or transaction hash
+                        </div>
+                    </div>
+                </form>
+
+
+    </div>
+ </div>
