@@ -1,0 +1,43 @@
+<table class="table table-striped mt-2">
+    <thead>
+    <tr><td>Name</td><td>Value</td></tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Hash</td>
+        <td>{{ deed.hash }}</td>
+    </tr>
+    <tr>
+        <td>Issuer</td>
+        <td>{{ deed.issuer }}</td>
+    </tr>
+    <tr>
+        <td>Registration Number</td>
+        <td>{{ deed.registrationNumber }}</td>
+    </tr>
+    <tr>
+        <td>Registration Date</td>
+        <td>{{ deed.registrationDate }}</td>
+    </tr>
+    <tr>
+        <td>User Id</td>
+        <td>{{ deed.userId }}</td>
+    </tr>
+    <tr>
+        <td>Deed Date</td>
+        <td>{{ deed.deedDate | date }}</td>
+    </tr>
+    <tr>
+        <td>Submission Date</td>
+        <td>{{ +deed.submissionDate | date }}</td>
+    </tr>
+    <tr>
+        <td>Registration Date</td>
+        <td>{{ +deed.registrationDate | date }}</td>
+    </tr>
+    <tr>
+        <td>Upload Date</td>
+        <td>{{ +deed.uploadDate | date }}</td>
+    </tr>
+    </tbody>
+</table>

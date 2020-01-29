@@ -9,6 +9,7 @@
                 <app-transaction-platform-deed-simple *ngIf="deed !== undefined && (deed.deedType == responseType.TRANSACTION_PLATFORM_DEED_SIMPLE)" [deed]="deed"></app-transaction-platform-deed-simple>
                 <app-transaction-platform-simple-deed *ngIf="deed !== undefined && (deed.deedType == responseType.TRANSACTION_PLATFORM_SIMPLE_DEED)" [deed]="deed"></app-transaction-platform-simple-deed>
                 <app-document-registry-hash *ngIf="deed !== undefined && (deed.deedType == responseType.DOCUMENT_REGISTRY_HASH)" [deed]="deed"></app-document-registry-hash>
+                <app-registry-document *ngIf="deed !== undefined && (deed.deedType == responseType.PRIVATE_REGISTRY_DOCUMENT)" [deed]="deed"></app-registry-document>
             </ng-template>
         </ngb-tab>
         <ngb-tab title="Propy Data">

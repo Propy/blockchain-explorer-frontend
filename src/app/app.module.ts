@@ -24,6 +24,7 @@ import { TransactionPlatformDeedComponent } from './transaction-details/deed-typ
 import { TransactionPlatformDeedSimpleComponent } from './transaction-details/deed-types/transaction-platform-deed-simple/transaction-platform-deed-simple.component';
 import {TransactionPlatformSimpleDeedComponent} from './transaction-details/deed-types/transaction-platform-simple-deed/transaction-platform-simple-deed.component';
 import { DocumentRegistryHashComponent } from './transaction-details/deed-types/document-registry-hash/document-registry-hash.component';
+import { RegistryDocumentComponent } from './transaction-details/deed-types/registry-document/registry-document.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { DocumentRegistryHashComponent } from './transaction-details/deed-types/
     TransactionPlatformDeedComponent,
     TransactionPlatformDeedSimpleComponent,
     TransactionPlatformSimpleDeedComponent,
-    DocumentRegistryHashComponent
+    DocumentRegistryHashComponent,
+    RegistryDocumentComponent
   ],
     imports: [
         BrowserModule,
