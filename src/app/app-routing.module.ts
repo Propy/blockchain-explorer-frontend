@@ -15,7 +15,7 @@ const routes: Routes = [
     { path: 'terms', component: TermsComponent},
     { path: 'login', component: LoginComponent},
     { path: 'transactions', component: TransactionListComponent },
-    { path: 'transaction/:id', component: TransactionDetailsComponent }
+    { path: 'transaction/:platformType/:addressOrHash', component: TransactionDetailsComponent }
 ];
 
 @NgModule({

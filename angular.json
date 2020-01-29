@@ -119,6 +119,119 @@
           }
         }
       }
+    },
+    "transaction-platform-deed": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/transaction-platform-deed",
+      "sourceRoot": "projects/transaction-platform-deed/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/transaction-platform-deed",
+            "index": "projects/transaction-platform-deed/src/index.html",
+            "main": "projects/transaction-platform-deed/src/main.ts",
+            "polyfills": "projects/transaction-platform-deed/src/polyfills.ts",
+            "tsConfig": "projects/transaction-platform-deed/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/transaction-platform-deed/src/favicon.ico",
+              "projects/transaction-platform-deed/src/assets"
+            ],
+            "styles": [
+              "projects/transaction-platform-deed/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/transaction-platform-deed/src/environments/environment.ts",
+                  "with": "projects/transaction-platform-deed/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "transaction-platform-deed:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "transaction-platform-deed:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "transaction-platform-deed:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/transaction-platform-deed/src/test.ts",
+            "polyfills": "projects/transaction-platform-deed/src/polyfills.ts",
+            "tsConfig": "projects/transaction-platform-deed/tsconfig.spec.json",
+            "karmaConfig": "projects/transaction-platform-deed/karma.conf.js",
+            "assets": [
+              "projects/transaction-platform-deed/src/favicon.ico",
+              "projects/transaction-platform-deed/src/assets"
+            ],
+            "styles": [
+              "projects/transaction-platform-deed/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/transaction-platform-deed/tsconfig.app.json",
+              "projects/transaction-platform-deed/tsconfig.spec.json",
+              "projects/transaction-platform-deed/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/transaction-platform-deed/e2e/protractor.conf.js",
+            "devServerTarget": "transaction-platform-deed:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "transaction-platform-deed:serve:production"
+            }
+          }
+        }
+      }
     }},
   "defaultProject": "blockchain-explorer-frontend"
 }

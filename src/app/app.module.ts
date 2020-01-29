@@ -18,6 +18,12 @@ import {TransactionListComponent} from './transaction-list/transaction-list.comp
 import {TransactionDetailsComponent} from './transaction-details/transaction-details.component';
 import {WatchlistComponent} from './watchlist/watchlist.component';
 import { HomeComponent } from './pages/home/home.component';
+import { DeedHashedComponent } from './transaction-details/deed-types/deed-hashed/deed-hashed.component';
+import { DeedRegistrationDeedComponent } from './transaction-details/deed-types/deed-registration-deed/deed-registration-deed.component';
+import { TransactionPlatformDeedComponent } from './transaction-details/deed-types/transaction-platform-deed/transaction-platform-deed.component';
+import { TransactionPlatformDeedSimpleComponent } from './transaction-details/deed-types/transaction-platform-deed-simple/transaction-platform-deed-simple.component';
+import {TransactionPlatformSimpleDeedComponent} from './transaction-details/deed-types/transaction-platform-simple-deed/transaction-platform-simple-deed.component';
+import { DocumentRegistryHashComponent } from './transaction-details/deed-types/document-registry-hash/document-registry-hash.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +37,13 @@ import { HomeComponent } from './pages/home/home.component';
     TransactionListComponent,
     TransactionDetailsComponent,
     WatchlistComponent,
-    HomeComponent
+    HomeComponent,
+    DeedHashedComponent,
+    DeedRegistrationDeedComponent,
+    TransactionPlatformDeedComponent,
+    TransactionPlatformDeedSimpleComponent,
+    TransactionPlatformSimpleDeedComponent,
+    DocumentRegistryHashComponent
   ],
     imports: [
         BrowserModule,

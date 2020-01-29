@@ -3,38 +3,12 @@
     <ngb-tabset>
         <ngb-tab title="Blockchain Data">
             <ng-template ngbTabContent>
-
-                <table class="table table-striped mt-2">
-                <thead>
-                    <tr><td>Name</td><td>Value</td></tr>
-                </thead>
-                    <tbody>
-                        <tr>
-                            <td>Deed Address</td>
-                            <td>{{ deed?.deedAddress }}</td>
-                        </tr>
-                        <tr>
-                            <td>Buyers</td>
-                            <td>{{ buyer?.firstname }} {{ buyer?.lastname }}</td>
-                        </tr>
-                        <tr>
-                            <td>Sellers</td>
-                            <td>{{ seller?.firstname }} {{ seller?.lastname }}</td>
-                        </tr>
-                        <tr>
-                            <td>Property name</td>
-                            <td>{{ property?.name }}</td>
-                        </tr>
-                        <tr>
-                            <td>Property physical address</td>
-                            <td>{{ property?.physicalAddress }}</td>
-                        </tr>
-                        <tr>
-                            <td>Document address</td>
-                            <td>{{ document?.hash }}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <app-deed-hashed *ngIf="deed !== undefined && (deed.deedType == responseType.DEED_HASHED)" [deed]="deed"></app-deed-hashed>
+                <app-deed-registration-deed *ngIf="deed !== undefined && (deed.deedType == responseType.DEED_REGISTRATION_DEED)" [deed]="deed"></app-deed-registration-deed>
+                <app-transaction-platform-deed *ngIf="deed !== undefined && (deed.deedType == responseType.TRANSACTION_PLATFORM_DEED)" [deed]="deed"></app-transaction-platform-deed>
+                <app-transaction-platform-deed-simple *ngIf="deed !== undefined && (deed.deedType == responseType.TRANSACTION_PLATFORM_DEED_SIMPLE)" [deed]="deed"></app-transaction-platform-deed-simple>
+                <app-transaction-platform-simple-deed *ngIf="deed !== undefined && (deed.deedType == responseType.TRANSACTION_PLATFORM_SIMPLE_DEED)" [deed]="deed"></app-transaction-platform-simple-deed>
+                <app-document-registry-hash *ngIf="deed !== undefined && (deed.deedType == responseType.DOCUMENT_REGISTRY_HASH)" [deed]="deed"></app-document-registry-hash>
             </ng-template>
         </ngb-tab>
         <ngb-tab title="Propy Data">

@@ -1,6 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {PlatformType} from '../../shared/enums/platform-type.enum';
+import {DeedService} from '../../shared/deed.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -16,16 +18,18 @@ export class HomeComponent implements OnInit {
       platformType: ['', Validators.required]
   });
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
       this.platformTypeEnum = PlatformType;
   }
 
   ngOnInit() {
   }
 
-  submit = () => {
-      console.log(this.addressOrHashForm.value);
-  }
+  submit = async () => {
+      this.router.navigate(['/transaction', this.platformTypeModel.value, this.addressOrHashModel.value], {
+          queryParams: {refresh: new Date().getTime()}
+      });
+   }
 
   get addressOrHashModel() {
       return this.addressOrHashForm.get('addressOrHash');

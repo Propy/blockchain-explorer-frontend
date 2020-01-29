@@ -1,0 +1,35 @@
+<table class="table table-striped mt-2">
+    <thead>
+    <tr><td>Name</td><td>Value</td></tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Buyer addresses</td>
+        <td>
+            <div *ngFor="let address of deed.buyersAddresses">
+                {{ address }}
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>Buyer names</td>
+        <td>
+            <div *ngFor="let buyer of deed.buyersNames">
+                {{ buyer.firstname }} {{ buyer.lastname }}
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>Property Address</td>
+        <td>{{ deed.propertyAddress }}</td>
+    </tr>
+    <tr>
+        <td>Property Name</td>
+        <td>{{ deed.propertyName }}</td>
+    </tr>
+    <tr>
+        <td>Property Physical Address</td>
+        <td>{{ deed.propertyPhysicalAddress }}</td>
+    </tr>
+    </tbody>
+</table>

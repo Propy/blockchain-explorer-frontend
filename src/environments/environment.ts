@@ -17,6 +17,12 @@ export const environment = {
       DOCUMENT: '/document'
     }
   },
+  deedResponse: {
+    url: 'http://localhost',
+    endpoints: {
+      READ: '/read'
+    }
+  },
   identityServer: {
     url: 'https://dev.api.identityserver.propy.com',
     endpoints: {

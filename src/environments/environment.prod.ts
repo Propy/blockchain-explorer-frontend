@@ -7,6 +7,12 @@ export const environment = {
     url: 'http://5d2c9c3f8c90070014972764.mockapi.io',
     endpoint: '/transactions'
   },
+  deedResponse: {
+    url: 'http://localhost',
+    endpoints: {
+      READ: '/read'
+    }
+  },
   identityServer: {
     url: 'https://dev.api.identityserver.propy.com',
     endpoints: {
