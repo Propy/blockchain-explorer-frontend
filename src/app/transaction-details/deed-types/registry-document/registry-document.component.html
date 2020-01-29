@@ -17,7 +17,7 @@
     </tr>
     <tr>
         <td>Registration Date</td>
-        <td>{{ deed.registrationDate }}</td>
+        <td>{{ deed.registrationDate | date }}</td>
     </tr>
     <tr>
         <td>User Id</td>
@@ -27,17 +27,17 @@
         <td>Deed Date</td>
         <td>{{ deed.deedDate | date }}</td>
     </tr>
-    <tr>
+    <tr *ngIf="deed.submissionDate">
         <td>Submission Date</td>
-        <td>{{ +deed.submissionDate | date }}</td>
+        <td>{{ deed.submissionDate | date }}</td>
     </tr>
     <tr>
         <td>Registration Date</td>
-        <td>{{ +deed.registrationDate | date }}</td>
+        <td>{{ deed.registrationDate | date }}</td>
     </tr>
     <tr>
         <td>Upload Date</td>
-        <td>{{ +deed.uploadDate | date }}</td>
+        <td>{{ deed.uploadDate | date }}</td>
     </tr>
     </tbody>
 </table>

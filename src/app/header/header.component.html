@@ -8,22 +8,22 @@
     <ng-template #rt let-r="result" let-t="term">
         <ngb-highlight [result]="r.id" [term]="t"></ngb-highlight>
     </ng-template>
+
     <div class="menu-container">
-        <div class="col-md-12 mt-2">
-            <form class="inline-form">
-                <div class="input-group">
-                    <form #searchForm="ngForm" (ngSubmit)="submit(searchForm.form)" class="form-inline">
-                        <!-- <input id="typeahead-basic" type="text" class="form-control" name="model" (selectItem)="selectedItem($event)" [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt" [inputFormatter]="formatter"/> -->
-                        <input type="text" class="form-control" name="model" [(ngModel)]="model" />
-                        <div class="input-group-prepend">
-                            <button class="btn btn-secondary" type="submit" (click)="submit(searchForm.form)">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </form>
-        </div>
+<!--        <div class="col-md-12 mt-2">-->
+<!--            <form class="inline-form">-->
+<!--                <div class="input-group">-->
+<!--                    <form #searchForm="ngForm" (ngSubmit)="submit(searchForm.form)" class="form-inline">-->
+<!--                        <input type="text" class="form-control" name="model" [(ngModel)]="model" />-->
+<!--                        <div class="input-group-prepend">-->
+<!--                            <button class="btn btn-secondary" type="submit" (click)="submit(searchForm.form)">-->
+<!--                                <i class="fas fa-search"></i>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
         <!--
         <div class="col-md-12 mt-2">
             <nav class="my-2 my-md-0 mr-md-3 main-menu">
