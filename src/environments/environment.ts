@@ -18,7 +18,7 @@ export const environment = {
     }
   },
   deedResponse: {
-    url: 'http://localhost',
+    url: 'http://172.31.92.252:8150',
     endpoints: {
       READ: '/read'
     }
