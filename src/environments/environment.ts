@@ -18,7 +18,7 @@ export const environment = {
     }
   },
   deedResponse: {
-    url: 'https://bcexp-api.propy.biz:8150',
+    url: 'https://bcexp-api.propy.biz',
     endpoints: {
       READ: '/read'
     }
